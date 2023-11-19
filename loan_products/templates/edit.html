@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block title %}Edit Loan Product - Your Site{% endblock %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col">
+      <h1>Edit Loan Product</h1>
+    </div>
+  </div>
+
+  <form method="post" action="{% url 'edit_loan_product' loan_product.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="id_product_name">Product Name:</label>
+      <input type="text" name="product_name" id="id_product_name" class="form-control" value="{{ loan_product.product_name }}" required>
+    </div>
+    <div class="form-group">
+      <label for="id_product_description">Product Description:</label>
+      <textarea name="product_description" id="id_product_description" class="form-control" required>{{ loan_product.product_description }}</textarea>
+    </div>
+    <div class="d-flex my-3 gap-2">
+        <button type="submit" class="btn btn-success mr-2">Update</button>
+        <a class="btn btn-secondary" href="{% url 'loan_products' %}">Done</a>
+      </div>  </form>
+
+{% endblock %}
