@@ -20,12 +20,12 @@ from loan_products import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-     path('register/', views.register, name='register'),
-    path('login/', views.user_login, name='login'),
-    path('logout/', views.user_logout, name='logout'),
-    path('loan-products/', views.show, name='loan_products'),
-    path('loan-products/new/', views.new_loan_product, name='new_loan_product'),
-    path('loan-products/edit/<int:id>/', views.edit, name='edit_loan_product'),
-    path('loan-products/delete/<int:id>/', views.destroy, name='delete_loan_product'),
+    path('', views.home, name='home'), # first page (Home page)
+    path('register/', views.register, name='register'), # second page (Register page)
+    path('login/', views.user_login, name='login'), # third page (Login page)
+    path('logout/', views.user_logout, name='logout'), # url to view that logs out a user
+    path('loan-products/', views.show, name='loan_products'), # forth page (View data from the db page)
+    path('loan-products/new/', views.new_loan_product, name='new_loan_product'), # fifth page (Create new data page)
+    path('loan-products/edit/<int:id>/', views.edit, name='edit_loan_product'), # six page (Update data page)
+    path('loan-products/delete/<int:id>/', views.destroy, name='delete_loan_product'), # url to view that deletes an item
 ]

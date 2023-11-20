@@ -5,8 +5,6 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 
-
-
 # Create your views here.
 def home(request):
     return render(request,'home.html')
@@ -32,7 +30,6 @@ def show(request):
 @login_required(login_url='/login/')
 def edit(request, id):
     loan_product = LoanProduct.objects.get(id=id)
-    print(loan_product)
     form = LoanProductForm(request.POST, instance = loan_product)
     if form.is_valid():
         form.save()
@@ -51,7 +48,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')  # Replace 'home' with your home view name or URL pattern
+            return redirect('loan_products')
     else:
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
@@ -61,7 +58,7 @@ def user_login(request):
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect('home')  # Replace 'home' with your home view name or URL pattern
+            return redirect('loan_products')
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})

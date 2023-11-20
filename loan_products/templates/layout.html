@@ -30,6 +30,18 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'new_loan_product' %}">Add New Loan Products</a>
               </li>
+              <li class="nav-item cursor-default">
+                <span class="nav-link text-primary">
+                  Welcome {{ user.username }}
+                </span>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="{% url 'logout' %}">Logout</a>
+              </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link text-success" href="{% url 'login' %}">Login</a>
+            </li>
             {% endif %}
             
           </ul>
