@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'bootstrap5',
     'loans',
     'user_details',
-    'pwa'
 ]
 
 MIDDLEWARE = [
