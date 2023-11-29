@@ -28,4 +28,10 @@ urlpatterns = [
     path('loan-products/new/', views.new_loan_product, name='new_loan_product'), # fifth page (Create new data page)
     path('loan-products/edit/<int:id>/', views.edit, name='edit_loan_product'), # six page (Update data page)
     path('loan-products/delete/<int:id>/', views.destroy, name='delete_loan_product'), # url to view that deletes an item
+    path('set-session/', views.set_session_token, name='set_session_token'),
+    path('session/', views.get_session_token, name='get_session_token'),
+    path('members/', views.view_members, name='view_members'),
+    path('dashboard/', views.dashboard, name='dashboard'),
+    #loan routes
+    path('loans/', include('loans.urls')),
 ]
