@@ -2,7 +2,7 @@ import os
 import sys
 
 # assuming your Django settings file is at '/home/myusername/mysite/mysite/settings.py'
-path = '/home/fetaDeven/loan-app'
+path = '/home/fetaDeven/loan-app/core/settings.py'
 if path not in sys.path:
     sys.path.insert(0, path)
 
