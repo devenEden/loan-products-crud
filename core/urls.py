@@ -34,4 +34,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     #loan routes
     path('loans/', include('loans.urls')),
+    path('', include('pwa.urls')),
 ]
