@@ -138,7 +138,7 @@ def create_loan_repayment(request, loan_id):
     else:
         form = LoanRepaymentForm()
 
-    return redirect('loan_details', loan_id=loan.id)
+    return redirect('loan_detail', loan_id=loan.id)
 
 def delete_repayment(request, loan_id, repayment_id):
     loan_repayment = get_object_or_404(LoanRepayment, id=repayment_id, loan__id=loan_id)

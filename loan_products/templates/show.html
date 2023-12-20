@@ -10,6 +10,12 @@
         <div class="col text-right">
           <a class="btn btn-primary" href="{% url 'new_loan_product' %}">Add New Loan Product</a>
         </div>
+        {% else %}
+        <div class="col-md-4">
+          <a href="{% url 'apply_for_loan' %}" class="btn btn-primary">
+            Apply For Loan
+          </a>
+        </div>
         {% endif %}
       {% else %}
     <div class="col text-right">

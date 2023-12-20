@@ -91,7 +91,7 @@ def user_login(request):
         form = AuthenticationForm(request, request.POST)
         if form.is_valid():
             login(request, form.get_user())
-            return redirect('dashboard')
+            return redirect('loan_products')
     else:
         form = AuthenticationForm()
     return render(request, 'login.html', {'form': form})

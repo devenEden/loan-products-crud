@@ -184,7 +184,7 @@
                 <div class="row mt-4">
                     {% if user_details.is_admin %}
                     <div class="col-md-3">
-                        <h5>Create Repayment - Loan ID: {{ loan.id }}</h5>
+                        <h5>Create Repayment  <br> Loan ID: {{ loan.id }}</h5>
 
                         <form method="post" action="{% url 'create_loan_repayment' loan.id %}">
                           {% csrf_token %}
